@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		537CE8F1B4ECE3CED88979EF /* libPods-Assignment8.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D7216C494E43076061361E44 /* libPods-Assignment8.a */; };
+		558DD8EF1C7AA0F90030792E /* Push+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 558DD8EB1C7AA0F90030792E /* Push+CoreDataProperties.m */; };
+		558DD8F01C7AA0F90030792E /* Push.m in Sources */ = {isa = PBXBuildFile; fileRef = 558DD8ED1C7AA0F90030792E /* Push.m */; };
 		55D736BE1C765B8400C22EC9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D736BD1C765B8400C22EC9 /* main.m */; };
 		55D736C11C765B8400C22EC9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D736C01C765B8400C22EC9 /* AppDelegate.m */; };
-		55D736C41C765B8400C22EC9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D736C31C765B8400C22EC9 /* ViewController.m */; };
 		55D736C71C765B8400C22EC9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55D736C51C765B8400C22EC9 /* Main.storyboard */; };
 		55D736CA1C765B8400C22EC9 /* Assignment8.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 55D736C81C765B8400C22EC9 /* Assignment8.xcdatamodeld */; };
 		55D736CC1C765B8400C22EC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55D736CB1C765B8400C22EC9 /* Assets.xcassets */; };
@@ -20,12 +21,14 @@
 /* Begin PBXFileReference section */
 		29BD84658C39BEA209529799 /* Pods-Assignment8.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assignment8.release.xcconfig"; path = "Pods/Target Support Files/Pods-Assignment8/Pods-Assignment8.release.xcconfig"; sourceTree = "<group>"; };
 		3625BA9E8A476D6929281988 /* Pods-Assignment8.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assignment8.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Assignment8/Pods-Assignment8.debug.xcconfig"; sourceTree = "<group>"; };
+		558DD8EA1C7AA0F90030792E /* Push+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Push+CoreDataProperties.h"; path = "Assignment8/Push+CoreDataProperties.h"; sourceTree = "<group>"; };
+		558DD8EB1C7AA0F90030792E /* Push+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Push+CoreDataProperties.m"; path = "Assignment8/Push+CoreDataProperties.m"; sourceTree = "<group>"; };
+		558DD8EC1C7AA0F90030792E /* Push.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Push.h; path = Assignment8/Push.h; sourceTree = "<group>"; };
+		558DD8ED1C7AA0F90030792E /* Push.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Push.m; path = Assignment8/Push.m; sourceTree = "<group>"; };
 		55D736B91C765B8400C22EC9 /* Assignment8.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assignment8.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55D736BD1C765B8400C22EC9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		55D736BF1C765B8400C22EC9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		55D736C01C765B8400C22EC9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		55D736C21C765B8400C22EC9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		55D736C31C765B8400C22EC9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		55D736C61C765B8400C22EC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		55D736C91C765B8400C22EC9 /* Assignment8.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Assignment8.xcdatamodel; sourceTree = "<group>"; };
 		55D736CB1C765B8400C22EC9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -55,6 +58,18 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		558DD8EE1C7AA0F90030792E /* entity */ = {
+			isa = PBXGroup;
+			children = (
+				558DD8EA1C7AA0F90030792E /* Push+CoreDataProperties.h */,
+				558DD8EB1C7AA0F90030792E /* Push+CoreDataProperties.m */,
+				558DD8EC1C7AA0F90030792E /* Push.h */,
+				558DD8ED1C7AA0F90030792E /* Push.m */,
+			);
+			name = entity;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		55D736B01C765B8400C22EC9 = {
 			isa = PBXGroup;
 			children = (
@@ -78,8 +93,7 @@
 			children = (
 				55D736BF1C765B8400C22EC9 /* AppDelegate.h */,
 				55D736C01C765B8400C22EC9 /* AppDelegate.m */,
-				55D736C21C765B8400C22EC9 /* ViewController.h */,
-				55D736C31C765B8400C22EC9 /* ViewController.m */,
+				558DD8EE1C7AA0F90030792E /* entity */,
 				55D736C51C765B8400C22EC9 /* Main.storyboard */,
 				55D736CB1C765B8400C22EC9 /* Assets.xcassets */,
 				55D736CD1C765B8400C22EC9 /* LaunchScreen.storyboard */,
@@ -236,10 +250,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55D736C41C765B8400C22EC9 /* ViewController.m in Sources */,
+				558DD8F01C7AA0F90030792E /* Push.m in Sources */,
 				55D736CA1C765B8400C22EC9 /* Assignment8.xcdatamodeld in Sources */,
 				55D736C11C765B8400C22EC9 /* AppDelegate.m in Sources */,
 				55D736BE1C765B8400C22EC9 /* main.m in Sources */,
+				558DD8EF1C7AA0F90030792E /* Push+CoreDataProperties.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

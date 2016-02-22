@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import <CoreData/CoreData.h>
+#import "Push+CoreDataProperties.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +18,29 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    [OneSignal setLogLevel:ONE_S_LL_VERBOSE visualLevel:ONE_S_LL_NONE];
+    
+    self.oneSignal = [[OneSignal alloc] initWithLaunchOptions:launchOptions
+                                                        appId:@"51ffa7c9-dbf9-436c-891e-17fecd64c713"
+                                           handleNotification:^(NSString* message, NSDictionary* additionalData, BOOL isActive) {
+                                               NSLog(@"OneSignal Notification opened:\nMessage: %@", message);
+                                               
+                                               if (!isActive){ // saves push if app is not open when push is recieved
+                                                   Push *push = [NSEntityDescription insertNewObjectForEntityForName:@"Push"
+                                                                                              inManagedObjectContext:self.managedObjectContext];
+                                                   push.message = message;
+                                                   
+                                                   NSError *savingError = nil;
+                                                   
+                                                   if ([self.managedObjectContext save:&savingError]) {
+                                                       NSLog(@"Successfully Saved push message");
+                                                   } else {
+                                                       NSLog(@"Failed to Save push message");
+                                                   }
+                                               }
+                                          
+                                           }];
+    
     return YES;
 }
 
