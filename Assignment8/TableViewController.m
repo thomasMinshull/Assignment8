@@ -26,11 +26,15 @@ static NSString *pushTableViewCell = @"pushTableViewCell";
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
-    NSFetchRequest *pushFetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"push"];
+    NSFetchRequest *pushFetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Push"];
+    NSSortDescriptor *creationDateSort = [[NSSortDescriptor alloc] initWithKey:@"creationDate" ascending:YES];
+    pushFetchRequest.sortDescriptors = @[creationDateSort];
+    
     AppDelegate *appdelegate = [[UIApplication sharedApplication] delegate];
     
     self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:pushFetchRequest
-                                                                        managedObjectContext: appdelegate.managedObjectContext sectionNameKeyPath:nil
+                                                                        managedObjectContext: appdelegate.managedObjectContext
+                                                                          sectionNameKeyPath:nil
                                                                                    cacheName:nil];
     self.fetchedResultsController.delegate = self;
     NSError *fetchingError = nil;
@@ -39,9 +43,6 @@ static NSString *pushTableViewCell = @"pushTableViewCell";
     } else {
         NSLog(@"Fetch Unsuccessful");
     }
-    
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -52,24 +53,23 @@ static NSString *pushTableViewCell = @"pushTableViewCell";
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    id <NSFetchedResultsSectionInfo> sectionInfo = self.fetchedResultsController.sections[section];
+    return sectionInfo.numberOfObjects;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:pushTableViewCell forIndexPath:indexPath];
     
-    // Configure the cell...
+    Push *push = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    
+    cell.textLabel.text = [NSString stringWithFormat:@"%@", push.message];
     
     return cell;
 }
-*/
 
 /*
 // Override to support conditional editing of the table view.
@@ -114,5 +114,23 @@ static NSString *pushTableViewCell = @"pushTableViewCell";
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark -NSFetchedResultsControllerDelegate methods
+
+- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
+    [self.tableView beginUpdates];
+}
+
+- (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath {
+    if (type == NSFetchedResultsChangeDelete) {
+        [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    } else if (type == NSFetchedResultsChangeInsert){
+        [self.tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    }
+}
+
+-(void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
+    [self.tableView endUpdates];
+}
 
 @end
