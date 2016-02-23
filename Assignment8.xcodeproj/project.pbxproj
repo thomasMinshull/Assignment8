@@ -10,6 +10,7 @@
 		537CE8F1B4ECE3CED88979EF /* libPods-Assignment8.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D7216C494E43076061361E44 /* libPods-Assignment8.a */; };
 		558DD8EF1C7AA0F90030792E /* Push+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 558DD8EB1C7AA0F90030792E /* Push+CoreDataProperties.m */; };
 		558DD8F01C7AA0F90030792E /* Push.m in Sources */ = {isa = PBXBuildFile; fileRef = 558DD8ED1C7AA0F90030792E /* Push.m */; };
+		558DD8F31C7BF6DA0030792E /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 558DD8F21C7BF6DA0030792E /* TableViewController.m */; };
 		55D736BE1C765B8400C22EC9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D736BD1C765B8400C22EC9 /* main.m */; };
 		55D736C11C765B8400C22EC9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D736C01C765B8400C22EC9 /* AppDelegate.m */; };
 		55D736C71C765B8400C22EC9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55D736C51C765B8400C22EC9 /* Main.storyboard */; };
@@ -25,6 +26,8 @@
 		558DD8EB1C7AA0F90030792E /* Push+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Push+CoreDataProperties.m"; path = "Assignment8/Push+CoreDataProperties.m"; sourceTree = "<group>"; };
 		558DD8EC1C7AA0F90030792E /* Push.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Push.h; path = Assignment8/Push.h; sourceTree = "<group>"; };
 		558DD8ED1C7AA0F90030792E /* Push.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Push.m; path = Assignment8/Push.m; sourceTree = "<group>"; };
+		558DD8F11C7BF6DA0030792E /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		558DD8F21C7BF6DA0030792E /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		55D736B91C765B8400C22EC9 /* Assignment8.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assignment8.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55D736BD1C765B8400C22EC9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		55D736BF1C765B8400C22EC9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -93,6 +96,8 @@
 			children = (
 				55D736BF1C765B8400C22EC9 /* AppDelegate.h */,
 				55D736C01C765B8400C22EC9 /* AppDelegate.m */,
+				558DD8F11C7BF6DA0030792E /* TableViewController.h */,
+				558DD8F21C7BF6DA0030792E /* TableViewController.m */,
 				558DD8EE1C7AA0F90030792E /* entity */,
 				55D736C51C765B8400C22EC9 /* Main.storyboard */,
 				55D736CB1C765B8400C22EC9 /* Assets.xcassets */,
@@ -251,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				558DD8F01C7AA0F90030792E /* Push.m in Sources */,
+				558DD8F31C7BF6DA0030792E /* TableViewController.m in Sources */,
 				55D736CA1C765B8400C22EC9 /* Assignment8.xcdatamodeld in Sources */,
 				55D736C11C765B8400C22EC9 /* AppDelegate.m in Sources */,
 				55D736BE1C765B8400C22EC9 /* main.m in Sources */,

@@ -25,9 +25,9 @@
                                            handleNotification:^(NSString* message, NSDictionary* additionalData, BOOL isActive) {
                                                NSLog(@"OneSignal Notification opened:\nMessage: %@", message);
                                                
-                                               if (!isActive){ // saves push if app is not open when push is recieved
-                                                   Push *push = [NSEntityDescription insertNewObjectForEntityForName:@"Push"
-                                                                                              inManagedObjectContext:self.managedObjectContext];
+                                               Push *push = [NSEntityDescription insertNewObjectForEntityForName:@"Push"
+                                                                                          inManagedObjectContext:self.managedObjectContext];
+                                               if (message != nil) {
                                                    push.message = message;
                                                    
                                                    NSError *savingError = nil;
@@ -37,6 +37,7 @@
                                                    } else {
                                                        NSLog(@"Failed to Save push message");
                                                    }
+                                                   
                                                }
                                           
                                            }];
