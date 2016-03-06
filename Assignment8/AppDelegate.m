@@ -23,7 +23,6 @@
     self.oneSignal = [[OneSignal alloc] initWithLaunchOptions:launchOptions
                                                         appId:@"51ffa7c9-dbf9-436c-891e-17fecd64c713"
                                            handleNotification:^(NSString* message, NSDictionary* additionalData, BOOL isActive) {
-                                               NSLog(@"OneSignal Notification opened:\nMessage: %@", message);
                                                
                                                Push *push = [NSEntityDescription insertNewObjectForEntityForName:@"Push"
                                                                                           inManagedObjectContext:self.managedObjectContext];
