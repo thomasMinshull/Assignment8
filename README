@@ -1,0 +1,5 @@
+Assignment 8 was built for learning purposes by Thomas Minshull under the mentorship of Michael Thompson in Feb of 2016. 
+
+The App recieves Push notifications using OneSignal, and stores these push notification using core data. 
+
+Note to demonstrate the app, the user must run the app on thier phone (not in the simulator), and access to the onesignal app is required to send the push notifications. 
